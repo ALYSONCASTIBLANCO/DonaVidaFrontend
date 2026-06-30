@@ -1,43 +1,117 @@
+/*Variables globales del sitio.*/
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
-
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
-
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --red: #C8102E;
+  --red-hover: #A30B23;
+  --red-coral: #E0526A;
+  --navy-ink: #12224C;
+  --text: #1B2440;
+  --text-2: #5C6276;
+  --muted: #94A0B0;
+  --border: #E7E2E6;
+  --page: #FAF8F9;
+  --surface: #FFFFFF;
+  --ok: #0E9B5C;
+  --rose-soft: #FDE9EC;
+  --rose-2: #FBD9DF;
+  --rose-urgent: #FDE9EC;
+  --rose-urgent-border: #F1CEC6;  
 
   @media (max-width: 1024px) {
     font-size: 16px;
   }
 }
+/*Remover las margenes de todo el documento para evitar que se salga de la pantalla.*/
 *{
   margin: 0 !important;
 }
+
+/*Formato de colores (SOLO COLORES):*/
+.text-brand-red { color: var(--red) !important;}
+.text-brand-dark { color: var(--text) !important;}
+
+/*Removiendo estilos en listas y links*/
 ul{
   list-style-type: none;
 }
 a{
   text-decoration: none;
 }
+/*Texto especial para los items del footer*/
 .footertext{
   font-size: 0.75rem;
+  color: var(--page) !important;
+}
+/*Boton especial header para admins*/
+.admin-header-button{
+  background-color: var(--navy-ink) !important;
+  color: var(--page) !important;
+  border: none !important;
+  font-weight: bold !important;
+}
+footer{
+  background-color: var(--navy-ink) !important;
+}
+/*Borde separador del footer:*/
+.footer-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: rgba(255, 255, 255, 0.5);
+}
+/*Texto DonaVida Footer*/
+.donavida-footer-text{
+  color: var(--page) !important;
+}
+.footer-text-titles{
+  color: var(--text-2) !important;
+}
+.footer-extra-text{
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5) !important; 
+}
+
+/*Formato de las card*/
+.card{
+  background-color: var(--surface) !important;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.07) !important;
+}
+.card-title{
+  color: var(--text) !important;
+}
+.card-text{
+  color: var(--text-2) !important;
+}
+/*Color iconos dentro de las cards*/
+.card-icons{
+  color: var(--red-coral) !important;
+}
+
+/*Formato de Botones*/
+.main-buttons{
+  background-color: var(--red) !important;
+  color: var(--surface) !important;
+  border: none;
+  font-weight: bold;
+}
+
+.secondary-buttons{
+  background-color: var(--surface) !important;
+  color: var(--text) !important;
+  border: 1px solid var(--border) !important;
+}
+/*Formatos del Hero:*/
+.hero{
+  background: #FDE9EC;
+  background: linear-gradient(180deg, rgba(253, 233, 236, 1) 0%, rgba(255, 255, 255, 1) 100%);
+}
+.hero-text-size{
+  font-size: 54px !important;
+}
+.hero-campaigns-div{
+  display: flex !important;
+  justify-content: space-between;
+  width: 60% !important;
+  gap: 1.5rem;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--red) ;
+  border-radius: 0px 16px 16px 0px;
+  padding: 0.5rem;
 }
