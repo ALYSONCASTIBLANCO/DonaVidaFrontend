@@ -1,68 +1,68 @@
 # DonaVida Web Application
 
-DonaVida is a web application created in response to the humanitarian emergency caused by the earthquakes in Venezuela. The project aims to centralize reliable information about blood donation campaigns and blood banks across the country, making it easier for people to find where and how they can donate blood when it is needed most.
+DonaVida es una aplicación web creada como respuesta a la emergencia humanitaria provocada por los terremotos ocurridos en Venezuela. Su objetivo es centralizar información confiable sobre campañas de donación de sangre y bancos de sangre en todo el país, facilitando que las personas encuentren dónde y cómo donar cuando más se necesita.
 
-The application is currently being developed by a multidisciplinary team as part of the **Build4Venezuela** initiative.
-
----
-
-## 🌍 About the Project
-
-Following the earthquakes in Venezuela, access to reliable information about blood donation campaigns became a significant challenge. Citizens often had to rely on scattered social media posts, making it difficult to identify active campaigns, blood banks, and official sources.
-
-DonaVida seeks to solve this problem by providing a centralized platform where users can easily locate donation opportunities and access verified information through a simple and intuitive interface.
-
-Although the project originated during an emergency, its architecture is intended to support future humanitarian initiatives that require centralized campaign management.
+Actualmente, el proyecto está siendo desarrollado por un equipo multidisciplinario como parte de la iniciativa **Build4Venezuela**.
 
 ---
 
-## 🎯 Project Goals
+# 🌍 Acerca del proyecto
 
-The main objective of DonaVida is to simplify access to blood donation information by providing:
+Tras los terremotos ocurridos en Venezuela, acceder a información confiable sobre campañas de donación de sangre se convirtió en un desafío. En muchos casos, la información se encontraba dispersa entre publicaciones en redes sociales, dificultando localizar campañas activas, bancos de sangre y fuentes oficiales.
 
-- A centralized directory of blood donation campaigns.
-- A searchable database of blood banks throughout Venezuela.
-- Verified contact information and official sources.
-- Administrative tools to keep information updated.
-- A responsive interface accessible from desktop and mobile devices.
+DonaVida busca solucionar este problema mediante una plataforma centralizada donde cualquier persona pueda encontrar oportunidades para donar sangre de forma rápida, sencilla y confiable.
+
+Aunque el proyecto surge durante una emergencia, su arquitectura está pensada para servir como base para futuras iniciativas humanitarias que requieran gestionar campañas de donación.
 
 ---
 
-## ✨ Current Features
+# 🎯 Objetivos
 
-The project is currently under active development.
+El propósito principal de DonaVida es facilitar el acceso a información sobre donación de sangre mediante:
 
-Implemented features include:
-
-- React + Vite project structure
-- Modular frontend architecture
-- Client-side routing
-- Reusable UI components
-- Bootstrap responsive interface
-- API service layer prepared for backend integration
-- Mock data support during development
+- Un directorio centralizado de campañas de donación.
+- Un buscador de bancos de sangre en todo el territorio venezolano.
+- Información de contacto y fuentes oficiales verificadas.
+- Herramientas administrativas para mantener la información actualizada.
+- Una interfaz responsiva accesible desde computadores, tablets y dispositivos móviles.
 
 ---
 
-## 🚧 Planned Features
+# ✨ Funcionalidades actuales
 
-The following features are currently under development:
+El proyecto se encuentra actualmente en desarrollo.
 
-- 🔍 Search blood donation campaigns across Venezuela.
-- 🩸 Search blood banks with contact information and schedules.
-- 📍 Filter searches by state, city and blood type.
-- 📢 View active blood donation campaigns.
-- 📖 Donation requirements and frequently asked questions.
-- 🔐 Secure administrator authentication.
-- 📊 Administrative dashboard.
-- 📁 CSV/XLSX campaign import.
-- 🔗 Direct links to official campaign sources.
+Hasta el momento cuenta con:
+
+- Estructura base utilizando React + Vite.
+- Arquitectura modular del frontend.
+- Navegación mediante React Router.
+- Componentes reutilizables.
+- Interfaz responsiva construida con Bootstrap.
+- Capa de servicios preparada para consumir la API.
+- Uso de datos simulados (Mock Data) durante el desarrollo.
 
 ---
 
-## 🏛️ Frontend Architecture
+# 🚧 Funcionalidades planificadas
 
-The frontend follows a modular architecture that separates pages, reusable UI components and API communication.
+Entre las funcionalidades que actualmente se encuentran en desarrollo se incluyen:
+
+- 🔍 Búsqueda de campañas de donación de sangre en Venezuela.
+- 🩸 Consulta de bancos de sangre con información de contacto y horarios.
+- 📍 Filtros por estado, ciudad y grupo sanguíneo.
+- 📢 Visualización de campañas activas.
+- 📖 Secciones de preguntas frecuentes y requisitos para donar.
+- 🔐 Sistema de autenticación para administradores.
+- 📊 Dashboard administrativo.
+- 📁 Importación masiva de campañas mediante archivos CSV y XLSX.
+- 🔗 Enlaces directos a fuentes oficiales de cada campaña.
+
+---
+
+# 🏛️ Arquitectura del Frontend
+
+El proyecto sigue una arquitectura modular que separa las páginas, los componentes reutilizables y la comunicación con el backend.
 
 ```text
 src/
@@ -86,21 +86,21 @@ src/
 └── main.jsx
 ```
 
-### Architecture Principles
+## Principios de la arquitectura
 
-- Pages compose the application's workflow.
-- Layout components provide shared navigation and footer elements.
-- UI components are reusable across multiple pages.
-- API communication is isolated inside the `services` layer.
-- Mock data allows frontend development before backend completion.
+- Las páginas organizan el flujo principal de la aplicación.
+- Los componentes de **Layout** contienen los elementos compartidos como la barra de navegación y el pie de página.
+- Los componentes de **UI** son reutilizables y pueden utilizarse en diferentes vistas.
+- Toda la comunicación con la API se concentra en la carpeta `services`.
+- Durante el desarrollo se utilizan datos simulados para desacoplar el frontend del backend.
 
-This organization keeps the project scalable and simplifies future maintenance.
+Esta organización facilita el mantenimiento y permite que la aplicación crezca de forma ordenada.
 
 ---
 
-## ⚙️ Technology Stack
+# ⚙️ Tecnologías utilizadas
 
-### Frontend
+## Frontend
 
 - React
 - Vite
@@ -111,102 +111,102 @@ This organization keeps the project scalable and simplifies future maintenance.
 
 ---
 
-## 🧩 Technical Challenges
+# 🧩 Retos técnicos
 
-One of the primary challenges during development has been designing a scalable frontend architecture capable of supporting future growth.
+Uno de los principales desafíos durante el desarrollo ha sido diseñar una arquitectura frontend escalable que permita incorporar nuevas funcionalidades sin comprometer el mantenimiento del proyecto.
 
-The application has been structured with maintainability and modularity in mind, anticipating future features such as:
+Desde el inicio se ha buscado mantener una estructura modular preparada para integrar posteriormente:
 
-- Backend integration
-- Authentication
-- Real-time information updates
-- Administrative tools
-
----
-
-## 🔄 Backend Integration
-
-The backend is currently under active development.
-
-The frontend has been prepared for future integration through a dedicated service layer (`services/api.js`), allowing API communication to remain independent from UI components.
-
-Developers interested in backend implementation are encouraged to contribute following the established architecture.
+- Backend
+- Autenticación
+- Actualización de información en tiempo real
+- Herramientas administrativas
 
 ---
 
-## 🚀 Getting Started
+# 🔄 Integración con el Backend
 
-### Clone the repository
+El backend del proyecto se encuentra actualmente en desarrollo.
+
+Sin embargo, el frontend ya fue organizado para facilitar su integración mediante una capa de servicios (`services/api.js`), manteniendo desacoplada la lógica de comunicación con la interfaz gráfica.
+
+Los desarrolladores interesados en colaborar con el backend son bienvenidos siguiendo la arquitectura definida para el proyecto.
+
+---
+
+# 🚀 Instalación
+
+## Clonar el repositorio
 
 ```bash
 git clone https://github.com/ALYSONCASTIBLANCO/DonaVidaFrontend.git
 ```
 
-### Navigate to the project
+## Ingresar al proyecto
 
 ```bash
 cd DonaVidaFrontend
 ```
 
-### Install dependencies
+## Instalar dependencias
 
 ```bash
 npm install
 ```
 
-### Start the development server
+## Ejecutar el proyecto
 
 ```bash
 npm run dev
 ```
 
-At this stage no additional environment variables are required.
+Actualmente el proyecto no requiere variables de entorno adicionales.
 
 ---
 
-## 🤝 Contributing
+# 🤝 Cómo contribuir
 
-Contributions are welcome.
+Las contribuciones son bienvenidas.
 
-If you'd like to help improve DonaVida, there are several areas where you can contribute:
+Puedes colaborar en diferentes áreas como:
 
-- Frontend development
-- Backend development
-- UI/UX improvements
-- Accessibility
-- Documentation
-- Performance optimization
-- Bug fixes
+- Desarrollo Frontend
+- Desarrollo Backend
+- Mejoras de UI/UX
+- Accesibilidad
+- Documentación
+- Optimización del rendimiento
+- Corrección de errores
 
-Please feel free to open an Issue or submit a Pull Request.
-
----
-
-## 📸 Screenshots
-
-> *(Add screenshots here as development progresses.)*
-
-Suggested screenshots:
-
-- Homepage
-- Search interface
-- Blood bank details
-- Administrator Dashboard
-- Login page
-- Responsive mobile view
+Si deseas participar, puedes abrir un **Issue** o enviar un **Pull Request**.
 
 ---
 
-## 👥 Development Team
+# 📸 Capturas de pantalla
 
-This project is being developed by a multidisciplinary team as part of **Build4Venezuela**.
+> *(Agregar imágenes conforme avance el desarrollo.)*
 
-Contributors are welcome through Issues and Pull Requests.
+Capturas sugeridas:
+
+- Página principal
+- Buscador de campañas
+- Información de bancos de sangre
+- Dashboard administrativo
+- Login
+- Vista responsive
 
 ---
 
-## 📄 Disclaimer
+# 👥 Equipo de desarrollo
 
-This project is currently under active development and should be considered an MVP (Minimum Viable Product).
+Este proyecto está siendo desarrollado por un equipo multidisciplinario como parte de **Build4Venezuela**.
 
-Features, architecture and documentation may evolve as development progresses.
+Las contribuciones son bienvenidas mediante **Issues** y **Pull Requests**.
+
+---
+
+# 📄 Aviso
+
+Este proyecto se encuentra actualmente en fase de desarrollo y debe considerarse un **MVP (Minimum Viable Product)**.
+
+Las funcionalidades, la arquitectura y la documentación podrán evolucionar conforme avance el desarrollo.
