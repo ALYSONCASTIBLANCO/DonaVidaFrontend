@@ -73,6 +73,9 @@ src/
 │   │   └── AppFooter.jsx
 │   └── ui/
 │       ├── SiteCard.jsx
+│       ├── Bankfilter.jsx
+│       ├── Hero.jsx
+│       ├── Searchbarhero.jsx
 │       └── LoadingSpinner.jsx
 ├── pages/
 │   ├── PublicPage.jsx

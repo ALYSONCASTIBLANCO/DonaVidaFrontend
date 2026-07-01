@@ -42,7 +42,7 @@ const mockData = [
     telefono: null,
     horario: "Lunes a viernes, 8:00 AM – 12:00 M",
     campana: null,
-    tipoSangre: "Todos (A, B, AB y O, según el uso de los grupos sanguíneos en la publicación)",
+    tipoSangre: "Todos (A+, B+, AB+ y O+, según el uso de los grupos sanguíneos en la publicación)",
     fuente: "Instagram oficial de Clínica Atías (@clinicaatiascaracas)",
     url: "https://www.instagram.com/p/DaHWsAtNu47/",
     fechaActualizacion: "2026-06-29",
