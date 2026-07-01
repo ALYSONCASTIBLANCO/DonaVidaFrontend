@@ -40,7 +40,6 @@ Hasta el momento cuenta con:
 - Componentes reutilizables.
 - Interfaz responsiva construida con Bootstrap.
 - Capa de servicios preparada para consumir la API.
-- Uso de datos simulados (Mock Data) durante el desarrollo.
 
 ---
 
@@ -70,6 +69,7 @@ src/
 ├── components/
 │   ├── layout/
 │   │   ├── AppNavbar.jsx
+│   │   ├── ProtectedRoute.jsx
 │   │   └── AppFooter.jsx
 │   └── ui/
 │       ├── SiteCard.jsx
@@ -77,15 +77,16 @@ src/
 │       ├── Hero.jsx
 │       ├── Searchbarhero.jsx
 │       └── LoadingSpinner.jsx
+├── context/
+│   └── AuthContext.jsx
 ├── pages/
 │   ├── PublicPage.jsx
 │   ├── Login.jsx
 │   └── AdminPage.jsx
 ├── services/
 │   └── api.js
-├── data/
-│   └── mockData.js
 ├── App.jsx
+├── index.css
 └── main.jsx
 ```
 
@@ -95,7 +96,7 @@ src/
 - Los componentes de **Layout** contienen los elementos compartidos como la barra de navegación y el pie de página.
 - Los componentes de **UI** son reutilizables y pueden utilizarse en diferentes vistas.
 - Toda la comunicación con la API se concentra en la carpeta `services`.
-- Durante el desarrollo se utilizan datos simulados para desacoplar el frontend del backend.
+- Se añade una carpeta `context` para hacer el manejo de los roles más universal a través de la navegación de las diferentes vistas de la plataforma.
 
 Esta organización facilita el mantenimiento y permite que la aplicación crezca de forma ordenada.
 
