@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import SiteCard from "../components/ui/SiteCard";
 import Hero from "../components/ui/Hero";
 import Bankfilter from "../components/ui/Bankfilter";
-import mockData from "../data/mockData";
+//Llamada al frontend de la informacion de los puntos de donacion.
+import { getCenters } from "../services/api";
 export default function PublicPage(){
+
+    //La data se almacena aqui:
+    const [mockData, setMockData] = useState([]);
+    //Campanas disponibles aqui:
     const[campaigns, setCampaigns]=useState('')
 
     //Se filtran los tipos de sangre para que puedan ser renderizados en los botones (DEBEN TENER + o - PARA QUE SEAN DATOS NORMALIZADOS).
@@ -88,6 +93,19 @@ export default function PublicPage(){
 
         return coincideTexto && coincideEstado && coincideCiudad && coincideTipoSangre && coincideCampana && coincideTipoCentro
     })
+    //Se hace la llamada y se obtienen los datos.
+    useEffect(() => {
+        async function loadCenters() {
+            try {
+                const response = await getCenters();
+                setMockData(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        loadCenters();
+    }, []);
     return(
         <Container>
             <Row><Hero onBuscar={handleSearch}

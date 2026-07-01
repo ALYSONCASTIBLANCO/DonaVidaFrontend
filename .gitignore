@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# mockData con datos forzados
+src/data/mockData.js
