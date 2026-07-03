@@ -74,6 +74,8 @@ src/
 │   └── ui/
 │       ├── SiteCard.jsx
 │       ├── Bankfilter.jsx
+│       ├── DashboardStats.jsx
+│       ├── FilesLoader.jsx
 │       ├── Hero.jsx
 │       ├── Searchbarhero.jsx
 │       └── LoadingSpinner.jsx

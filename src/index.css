@@ -136,6 +136,15 @@ footer{
   color: var(--red) !important;
 }
 
+/*Estilos para el cargador de archivos del dashboard del admin.*/
+.admin-loader{
+  background-color: var(--rose-soft) !important;
+  text-align: center !important;
+}
+
+.admin-loader-secondary-text{
+  font-size: 0.8rem;
+}
 
 /*Estilos para el login*/
 .login-container{
