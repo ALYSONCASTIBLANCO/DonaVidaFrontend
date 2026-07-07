@@ -6,21 +6,39 @@ const api = axios.create({
     timeout: 5000
 })
 
+//Para poder manejar los errores y decirle a React que hacer cuando aparezcan
+//(por ejemplo, cuando el token expira), se va a crear una funcion transmisora
+//que le va a decir a React que cuando detecte un 401 producto de un vencimiento
+//de token, haga logout. Pero se lo transmitimos como valor al Context para que 
+//el Context actue cuando se le pida.
+
+let unauthorizedHandler = null;
+
+export function setUnauthorizedHandler(handler){
+    unauthorizedHandler = handler;
+}
+
+
 //Interceptor de respuestas incorrectas o fuera del 200 (pendiente para entender toda la arquitectura
 // del sistema de tokens.):
-/*
 api.interceptors.response.use(
     response => response,
     error => {
-        if(error.response.status == 401){
-
+        // Si el backend responde con un 401, significa que el token
+    // ya no es válido (expiró o fue revocado). Si existe un
+    // manejador registrado por el AuthContext, lo ejecutamos
+    // para cerrar la sesión del usuario.
+        if(error.response?.status === 401){
+            if(unauthorizedHandler){
+                unauthorizedHandler();
+            }
         }
         return Promise.reject(error);
     }
-);*/
+);
 
 //Interceptor para cuando se necesite token de autenticacion (accesos a dashboards.)
-api.interceptors.response.use((config) => {
+api.interceptors.request.use((config) => {
     //Capturamos el token (si hay) y lo dejamos en localStorage para que sobreviva al
     //refresh de la pagina.
     const token = localStorage.getItem("token");

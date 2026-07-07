@@ -1,6 +1,8 @@
 //Este archivo contiene el context, es decir, la columna vertebral de credenciales
 //que nos permite validar que acciones puede hacer el usuario registrado y sus privilegios.
 import { createContext, useState, useContext, useEffect } from "react";
+//Importo la funcion setUnauthorizedHandler para que cuando se detecte algun error, pueda ejecutar el logout.
+import { setUnauthorizedHandler } from "../services/api";
 //El contexto en este caso es un canal de comunicacion que consume toda la plataforma
 //y llega a cualquier componente sin pasar por props.
 const AuthContext = createContext(null);
@@ -34,20 +36,25 @@ export function AuthProvider({children}){
     //Lo que el provider comparte con todos sus hijos o componentes que la contienen:
     const value = {
         token,
-        isAuthenticated: token !==null,
+        isAuthenticated: token !== null,
         loading,
         login,
         logout
     }
-    //Usamos un useEffect para que verifique si esta autenticado y con ello, verifique el token y renderice
-    //a donde tiene que renderizar.
+    // Inicializa el sistema de autenticación:
+    // - Recupera el token almacenado.
+    // - Registra el callback de logout para Axios.
+    // - Finaliza el estado de carga inicial.
     useEffect(() => {
     const savedToken = localStorage.getItem("token");
 
     if (savedToken) {
         setToken(savedToken);
     }
-    //La pongo en falso para que el sistema alcance a verificar primero.
+    //En dado caso de que se invoque desde el interceptor desde el servicio de axios,
+    //registramos esta funcion para que se haga logout.
+    setUnauthorizedHandler(logout);
+    //Terminó la inicialización del sistema de autenticación.
     setLoading(false);
     }, []);
     return(
