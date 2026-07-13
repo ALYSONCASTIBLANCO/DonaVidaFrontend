@@ -5,12 +5,9 @@ import Form from 'react-bootstrap/Form';
 //Insertamos el hook y lo necesario para usar el Context y la asignacion de roles.
 import { useAuth } from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
+import { loginRequest } from '../services/api';
 
 export default function Login(){
-    //Variables de prueba, se reemplazaran cuando sea el momento.
-    const ADMIN_EMAIL = 'admin@donavida.com'
-    const ADMIN_PASSWORD = 'admin123' 
-
     //Insercion de bootstrap para validacion de formulario.
     const [validated, setValidated] = useState(false);
 
@@ -27,7 +24,7 @@ export default function Login(){
     //Uso de estado para el error cuando hay credenciales incorrectas.
     const[loginError, setLoginError] = useState(false);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
         event.preventDefault();
@@ -36,18 +33,25 @@ export default function Login(){
     event.preventDefault();
     setValidated(true);
 
-    //Validacion de las credenciales:
-    if(credentials.email === ADMIN_EMAIL && credentials.password === ADMIN_PASSWORD){
+    //Validacion de la sesion (oficial)
+    try {
+        const loginToken = await loginRequest(
+            {
+                email: credentials.email,
+                password:credentials.password
+            }
+        );
         setLoginError(false);
         //Manda token al context
-        login('fake-token');
+        login(loginToken);
         //Redirige a admin.
         navigate('/admin');
-    }
-    else{
+    } catch (error) {
+        console.error(error);
         setLoginError(true);
     }
   };
+
 
     return(
     <Container className='d-flex flex-column justify-content-center align-items-center m-3'>
