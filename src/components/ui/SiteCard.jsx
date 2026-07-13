@@ -14,6 +14,7 @@ export default function SiteCard({data}){
           <p className='mt-2 mb-2'><i className="bi bi-geo-alt-fill card-icons"></i> {data.direccion}</p>
           <p className='mt-2 mb-2'><i className="bi bi-clock-fill card-icons"></i> {data.horario}</p>
           <p className='mt-2 mb-2'><i className="bi bi-droplet-fill card-icons"></i> Necesita con urgencia: {data.tipoSangre}</p>
+          <p className='mt-2 mb-2'><i className="bi bi-bell-fill card-icons"></i> Campaña activa: {data.campana ? data.campana : "No hay Campañas activas"}</p>
         </div>
         <Card.Footer className='d-grid d-sm-flex gap-2'>
             <Button href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.direccion)}`} target="_blank" rel="noreferrer" className='ms-1 p-2 main-buttons' size="sm"><i className="bi bi-send-arrow-down-fill"></i> Cómo llegar</Button>
