@@ -62,3 +62,9 @@ export const loginRequest = async ({ email, password }) =>{
         })
     return data.access_token;
 }
+
+//Endpoint para eliminar un centro (soft delete)
+export const deleteCenter = async (id)=>{
+    const { data } = await api.delete(`/centers/${id}`);
+    return data;
+}

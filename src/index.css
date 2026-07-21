@@ -13,7 +13,7 @@
   --ok: #0E9B5C;
   --rose-soft: #FDE9EC;
   --rose-2: #FBD9DF;
-  --rose-urgent: #FDE9EC;
+  --rose-urgent: #FDEEEC;
   --rose-urgent-border: #F1CEC6;  
 
   @media (max-width: 1024px) {
@@ -162,6 +162,24 @@ footer{
 /*Color iconos dentro de la tabla*/
 .table-icons{
   color: var(--text-2) !important;
+}
+
+/*Ajustes para el modal general*/
+.modal-dialog {
+  margin: auto !important;
+}
+
+.delete-modal {
+  background-color: var(--rose-urgent);
+  border: 1px solid var(--rose-urgent-border);
+}
+
+.delete-modal-title {
+  color: var(--red);
+}
+
+.delete-modal.body {
+  color: var(--navy-ink);
 }
 
 /*Estilos para el login*/
